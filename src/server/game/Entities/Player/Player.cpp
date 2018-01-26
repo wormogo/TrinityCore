@@ -15291,6 +15291,7 @@ void Player::RewardQuest(Quest const* quest, uint32 reward, Object* questGiver, 
             !spellInfo->HasEffect(DIFFICULTY_NONE, SPELL_EFFECT_LEARN_SPELL) &&
             !spellInfo->HasEffect(DIFFICULTY_NONE, SPELL_EFFECT_CREATE_ITEM) &&
             !spellInfo->HasEffect(DIFFICULTY_NONE, SPELL_EFFECT_APPLY_AURA) &&
+            !spellInfo->HasEffect(DIFFICULTY_NONE, SPELL_EFFECT_REMOVE_AURA) &&
             !spellInfo->HasEffect(DIFFICULTY_NONE, SPELL_EFFECT_SUMMON) &&
             !spellInfo->HasEffect(DIFFICULTY_NONE, SPELL_EFFECT_UPDATE_ZONE_AURAS_AND_PHASES) &&
             !spellInfo->HasEffect(DIFFICULTY_NONE, SPELL_EFFECT_DUMMY))
