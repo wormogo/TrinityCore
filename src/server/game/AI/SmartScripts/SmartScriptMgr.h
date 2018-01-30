@@ -509,7 +509,7 @@ enum SMART_ACTION
     SMART_ACTION_ADD_ITEM                           = 56,     // itemID, count
     SMART_ACTION_REMOVE_ITEM                        = 57,     // itemID, count
     SMART_ACTION_INSTALL_AI_TEMPLATE                = 58,     // AITemplateID
-    SMART_ACTION_SET_RUN                            = 59,     // 0/1
+    SMART_ACTION_SET_RUN                            = 59,     // 0/1, speed, speedDivider
     SMART_ACTION_SET_FLY                            = 60,     // 0/1
     SMART_ACTION_SET_SWIM                           = 61,     // 0/1
     SMART_ACTION_TELEPORT                           = 62,     // mapID,
@@ -871,6 +871,8 @@ struct SmartAction
         struct
         {
             uint32 run;
+            uint32 speed;
+            uint32 speedDivider;
         } setRun;
 
         struct
