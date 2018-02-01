@@ -1545,8 +1545,6 @@ void SmartScript::ProcessAction(SmartScriptHolder& e, Unit* unit, uint32 var0, u
                 break;
 
             ENSURE_AI(SmartAI, me->AI())->SetRun(e.action.setRun.run != 0);
-            if (e.action.setRun.speed && e.action.setRun.speedDivider)
-                me->SetSpeed(e.action.setRun.run != 0 ? MOVE_RUN : MOVE_WALK, float(e.action.setRun.speed) / float(e.action.setRun.speedDivider));
             break;
         }
         case SMART_ACTION_SET_SWIM:
