@@ -1411,6 +1411,16 @@ bool SmartAIMgr::IsEventValid(SmartScriptHolder& e)
 
             break;
         }
+        case SMART_ACTION_SET_MOVEMENT_SPEED:
+        {
+            if (e.action.movementSpeed.movementType >= MAX_MOVE_TYPE)
+            {
+                TC_LOG_ERROR("sql.sql", "SmartAIMgr: Entry " SI64FMTD " SourceType %u Event %u Action %u uses invalid movementType %u, skipped.", e.entryOrGuid, e.GetScriptType(), e.event_id, e.GetActionType(), e.action.movementSpeed.movementType);
+                return false;
+            }
+
+            break;
+        }
         case SMART_ACTION_START_CLOSEST_WAYPOINT:
         case SMART_ACTION_FOLLOW:
         case SMART_ACTION_SET_ORIENTATION:
