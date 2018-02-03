@@ -573,7 +573,7 @@ enum SMART_ACTION
     SMART_ACTION_SCENE_PLAY                         = 129,    // sceneId
     SMART_ACTION_SCENE_CANCEL                       = 130,    // sceneId
     // 131 - 132 : 3.3.5 reserved
-    SMART_ACTION_SET_MOVEMENT_SPEED                 = 133,    // movementType, speed
+    SMART_ACTION_SET_MOVEMENT_SPEED                 = 133,    // movementType, speedInteger, speedFraction
 
     SMART_ACTION_END                                = 134
 };
@@ -1105,7 +1105,8 @@ struct SmartAction
         struct
         {
             uint32 movementType;
-            uint32 speed;
+            uint32 speedInteger;
+            uint32 speedFraction;
         } movementSpeed;
 
         //! Note for any new future actions

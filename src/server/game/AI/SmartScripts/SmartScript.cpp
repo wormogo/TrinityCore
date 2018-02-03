@@ -2631,9 +2631,13 @@ void SmartScript::ProcessAction(SmartScriptHolder& e, Unit* unit, uint32 var0, u
             if (!targets)
                 break;
 
+            uint32 speedInteger = e.action.movementSpeed.speedInteger;
+            uint32 speedFraction = e.action.movementSpeed.speedFraction;
+            float speed = float(speedInteger) + float(speedFraction) / pow(10, floorf(log10(float(speedFraction ? speedFraction : 1)) + 1));
+
             for (WorldObject* target : *targets)
                 if (IsCreature(target))
-                    me->SetSpeed(UnitMoveType(e.action.movementSpeed.movementType), float(e.action.movementSpeed.speed));
+                    me->SetSpeed(UnitMoveType(e.action.movementSpeed.movementType), speed);
 
             delete targets;
             break;
